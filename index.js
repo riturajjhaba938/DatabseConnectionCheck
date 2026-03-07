@@ -18,6 +18,11 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use('/users', userRoutes);
 
+// Root route to handle base URL
+app.get('/', (req, res) => {
+    res.send('Welcome to the Database Connection Check API!');
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
